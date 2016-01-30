@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="54dp"
+    tools:context=".fragments.RequestFragment">
+
+    <LinearLayout
+        android:id="@+id/screen_1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Requesting a Nurse Now"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your estimated wait time is"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="2:00"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/screen_2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:visibility="invisible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nurse {name here}"/>
+
+        <!--<ImageView>-->
+            <!-- -->
+        <!--</ImageView>-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="is available to take your call"/>
+
+        <Button
+            android:onClick="startCall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start Call"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

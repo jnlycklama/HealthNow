@@ -1,38 +1,22 @@
 package com.example.jnlycklama.healthnow.fragments;
 
-import android.app.ActionBar;
-import android.app.Activity;
-import android.app.Fragment;
-import android.content.Context;
-import android.content.Intent;
+import android.support.v4.app.Fragment;
 import android.hardware.Camera;
-import android.hardware.Camera.CameraInfo;
-import android.hardware.Camera.Size;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.VideoView;
 
-import java.io.IOException;
-import java.util.List;
 
 import com.example.jnlycklama.healthnow.R;
-
-import org.w3c.dom.Text;
+import com.example.jnlycklama.healthnow.VideoActivity;
 
 
 public class VideoCallFragment extends Fragment {
@@ -78,6 +62,9 @@ public class VideoCallFragment extends Fragment {
 
         return view;
     }
+
+
+
     @Override
     public void onResume() {
         super.onResume();
@@ -122,7 +109,6 @@ public class VideoCallFragment extends Fragment {
             try {
                 camera.setPreviewDisplay(previewHolder);
             } catch (Throwable t) {
-                Log.e("PreviewDemo-surfaceCallback", "Exception in setPreviewDisplay()", t);
                 Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
 
