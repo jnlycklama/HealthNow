@@ -16,9 +16,6 @@ public class RatingFragment extends Fragment {
         // Required empty public constructor
     }
 
-    private RatingBar rb;
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +24,7 @@ public class RatingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_rating, container, false);
-        rb = (RatingBar) v.findViewById(R.id.rating_bar);
+        RatingBar rb = (RatingBar) v.findViewById(R.id.rating_bar);
 
         rb.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
