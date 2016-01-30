@@ -40,7 +40,7 @@ public class RequestFragment extends Fragment {
 
         timer = (TextView) v.findViewById(R.id.timer);
 
-        new CountDownTimer(30000, 1000) {
+        new CountDownTimer(5000, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 long secondsLeft = millisUntilFinished / 1000;
@@ -50,7 +50,7 @@ public class RequestFragment extends Fragment {
             }
 
             public void onFinish() {
-                scr1.setVisibility(View.INVISIBLE);
+                scr1.setVisibility(View.GONE);
                 scr2.setVisibility(View.VISIBLE);
             }
         }.start();

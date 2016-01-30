@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RatingBar;
 
 import com.example.jnlycklama.healthnow.R;
 
@@ -15,6 +16,8 @@ public class RatingFragment extends Fragment {
         // Required empty public constructor
     }
 
+    private RatingBar rb;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,13 @@ public class RatingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_rating, container, false);
+        rb = (RatingBar) v.findViewById(R.id.rating_bar);
+
+        rb.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                System.out.println(String.valueOf(rating));
+            }
+        });
 
         return v;
     }
