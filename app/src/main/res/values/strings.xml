@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HealthNow</string>
+    <string name="app_name">DocToc</string>
     <string name="title_activity_video">VideoActivity</string>
     <string name="title_activity_analysis">AnalysisActivity</string>
 
