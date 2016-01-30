@@ -38,7 +38,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_weight="1"
-            android:background="@color/colorAccentTwo">
+            android:background="@color/white">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -48,27 +48,14 @@
                 android:gravity="center">
 
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:id="@+id/imageView"
-                    android:src="@drawable/user"
+                    android:src="@drawable/medtoc"
                     android:gravity="center"
                     android:layout_centerVertical="true"
                     android:padding="10dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hello"
-                    android:gravity="center"
-                    android:layout_centerVertical="true"
-                    android:textColor="@color/text"
-                    android:clickable="true"
-                    android:layout_toRightOf="@id/imageView"
-                    android:onClick="analysisBtn"
-                    android:textAllCaps="false"
-                    android:textSize="20sp">
-                </TextView>
             </RelativeLayout>
 
         </RelativeLayout>
