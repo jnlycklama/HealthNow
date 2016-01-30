@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.RequestFragment"
-    android:background="@color/colorAccentTwo"
+    android:background="@color/colorAccentDark"
     android:orientation="vertical">
 
     <TextView
@@ -22,26 +22,28 @@
             android:layout_height="wrap_content"
             android:text="Requesting a Nurse Now"
             android:textSize="30sp"
-            />
+            android:textColor="@color/text"/>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView3"
-            android:src="@drawable/medical90"
-            android:padding="10dp"/>
+            android:src="@drawable/medicalwhite"
+            android:padding="10dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Your estimated wait time is"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:textColor="@color/text"/>
 
         <TextView
             android:id="@+id/timer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25sp"/>
+            android:textSize="25sp"
+            android:textColor="@color/text"/>
 
     </LinearLayout>
 
@@ -57,7 +59,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nurse Susan"
-            android:textSize="30sp"/>
+            android:textSize="30sp"
+            android:textColor="@color/text"/>
 
         <ImageView
             android:layout_width="170dp"
@@ -70,15 +73,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="is available to take your call"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:textColor="@color/text"/>
 
         <Button
             android:onClick="startCall"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="Start Call"
-            android:background="@color/colorAccentOne"
-            android:layout_margin="5dp"/>
+            android:background="@color/colorPrimary"
+            android:layout_margin="5dp"
+            android:textColor="@color/text"/>
 
 
     </LinearLayout>
