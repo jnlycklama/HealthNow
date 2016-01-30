@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragments.RatingFragment">
+    tools:context=".fragments.RatingFragment"
+    android:background="@color/colorAccentDark">
 
     <TextView
         android:layout_width="fill_parent"
@@ -21,7 +22,8 @@
             android:textStyle="bold"
             android:textAlignment="center"
             android:layout_height="wrap_content"
-            android:text="Thank you for using MedToc!"/>
+            android:text="Thank you for using MedToc!"
+            android:textColor="@color/text"/>
 
         <TextView
             android:layout_marginTop="30dp"
@@ -30,19 +32,25 @@
             android:textSize="18dp"
             android:textAlignment="center"
             android:layout_height="wrap_content"
-            android:text="Rate the quality of your care"/>
+            android:text="Rate the quality of your care"
+            android:textColor="@color/text"/>
 
         <RatingBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/rating_bar"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorAccentDark"
+            />
 
         <Button
             android:onClick="submitRating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Submit Rating"/>
+            android:text="Submit Rating"
+            android:textColor="@color/text"
+            android:background="@color/colorPrimary"
+            android:padding="7dp"/>
 
     </LinearLayout>
 

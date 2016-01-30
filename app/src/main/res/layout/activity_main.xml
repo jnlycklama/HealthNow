@@ -33,10 +33,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/imageView"
-                    android:src="@drawable/medtoc"
+                    android:src="@drawable/medtoctrans"
                     android:gravity="center"
                     android:layout_centerVertical="true"
-                    android:padding="10dp"/>
+                    android:padding="10dp"
+                    android:paddingLeft="30dp"
+                    android:paddingStart="30dp"/>
 
             </RelativeLayout>
 
