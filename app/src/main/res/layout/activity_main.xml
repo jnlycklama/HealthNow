@@ -91,16 +91,18 @@
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:gravity="center">
+                android:gravity="center"
+                android:onClick="videoBtn">
 
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:id="@+id/imageView2"
-                    android:src="@drawable/videoPlayerBlack"
+                    android:src="@drawable/videoplayerblack"
                     android:gravity="center"
                     android:layout_centerVertical="true"
-                    android:padding="10dp"/>
+                    android:padding="10dp"
+                    android:onClick="videoBtn"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -112,9 +114,9 @@
                     android:layout_toRightOf="@id/imageView2"
                     android:id="@+id/videoCall"
                     android:clickable="true"
-                    android:onClick="videoBtn"
                     android:textAllCaps="false"
-                    android:textSize="20sp">
+                    android:textSize="20sp"
+                    android:onClick="videoBtn">
                 </TextView>
             </RelativeLayout>
 
