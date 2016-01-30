@@ -25,41 +25,100 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <TextView android:text="Select the service you would like" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:layout_gravity="center"
-        android:padding="4dp"/>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical">
 
-        <Button
-            android:gravity="center"
-            android:layout_weight="1"
+        <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Photo Consult"
-            android:textColor="@color/text"
-            android:clickable="true"
-            android:onClick="analysisBtn"
-            android:textAllCaps="false">
-        </Button>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray"/>
-        <Button
+            android:orientation="vertical"
+            android:layout_gravity="center"
             android:gravity="center"
             android:layout_weight="1"
+            android:background="@color/colorAccentTwo">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/imageView"
+                    android:src="@drawable/cameraBlack"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Photo Consult"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/text"
+                    android:clickable="true"
+                    android:layout_toRightOf="@id/imageView"
+                    android:onClick="analysisBtn"
+                    android:textAllCaps="false"
+                    android:textSize="20sp">
+                </TextView>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Video Call"
-            android:textColor="@color/text"
-            android:clickable="true"
-            android:onClick="videoBtn"
-            android:textAllCaps="false">
-        </Button>
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/colorAccentOne">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/imageView2"
+                    android:src="@drawable/videoPlayerBlack"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Video Call"
+                    android:gravity="center"
+                    android:textColor="@color/text"
+                    android:layout_toRightOf="@id/imageView2"
+                    android:id="@+id/videoCall"
+                    android:clickable="true"
+                    android:onClick="videoBtn"
+                    android:textAllCaps="false"
+                    android:textSize="20sp">
+                </TextView>
+            </RelativeLayout>
+
+        </RelativeLayout>
 
     </LinearLayout>
 
