@@ -49,11 +49,11 @@
         android:layout_height="wrap_content"
         android:onClick="endCall"
         android:layout_width="wrap_content"
-        android:layout_alignBottom="@+id/image_view"
+        android:layout_alignBottom="@+id/camera_view"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/image_view"
-        android:layout_toStartOf="@+id/image_view"
+        android:layout_toLeftOf="@+id/camera_view"
+        android:layout_toStartOf="@+id/camera_view"
         android:paddingTop="4dp"
         android:paddingBottom="4dp"
         android:layout_marginLeft="10dp"
@@ -64,7 +64,6 @@
 
 
     <SurfaceView
-        android:visibility="gone"
         android:id="@+id/camera_view"
         android:layout_height="180dp"
         android:layout_width="130dp"
@@ -75,18 +74,18 @@
         android:layout_marginBottom="10dp">
     </SurfaceView>
 
-    <ImageView
-        android:id="@+id/image_view"
-        android:layout_height="180dp"
-        android:layout_width="130dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/one">
-    </ImageView>
+    <!--<ImageView-->
+        <!--android:id="@+id/image_view"-->
+        <!--android:layout_height="180dp"-->
+        <!--android:layout_width="130dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:layout_marginBottom="10dp"-->
+        <!--android:scaleType="centerCrop"-->
+        <!--android:src="@drawable/one">-->
+    <!--</ImageView>-->
 
 
 </RelativeLayout>
