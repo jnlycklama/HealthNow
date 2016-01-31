@@ -2,6 +2,8 @@ package com.example.jnlycklama.healthnow.fragments;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -84,23 +86,26 @@ public class VideoCallFragment extends Fragment {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        videoView.setAlpha(0f);
-                        videoView.setVisibility(View.VISIBLE);
-                        videoView.animate().alpha(1f).setDuration(1000).setListener(null);
+                Activity c = getActivity();
+                if (c!=null){
+                    c.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            videoView.setAlpha(0f);
+                            videoView.setVisibility(View.VISIBLE);
+                            videoView.animate().alpha(1f).setDuration(1000).setListener(null);
 
-                        loading_screen.animate().alpha(0f).setDuration(1000)
-                                .setListener(new AnimatorListenerAdapter() {
-                                    @Override
-                                    public void onAnimationEnd(Animator animation) {
-                                        loading_screen.setVisibility(View.GONE);
-                                    }
-                                });
+                            loading_screen.animate().alpha(0f).setDuration(1000)
+                                    .setListener(new AnimatorListenerAdapter() {
+                                        @Override
+                                        public void onAnimationEnd(Animator animation) {
+                                            loading_screen.setVisibility(View.GONE);
+                                        }
+                                    });
 
-                    }
-                });
+                        }
+                    });
+                }
 
             }
         }, 2500);
