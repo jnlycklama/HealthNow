@@ -67,6 +67,13 @@
 
         <ImageView
             android:layout_width="170dp"
+            android:id="@+id/stars"
+            android:src="@drawable/stars"
+            android:padding="10dp"
+            android:layout_height="50dp" />
+
+        <ImageView
+            android:layout_width="170dp"
             android:layout_height="170dp"
             android:id="@+id/imageView4"
             android:src="@drawable/two"
