@@ -23,6 +23,7 @@ public class VideoActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setTitle("medtoc");
 
         RequestFragment firstFragment = new RequestFragment();
         changeFragment(firstFragment);

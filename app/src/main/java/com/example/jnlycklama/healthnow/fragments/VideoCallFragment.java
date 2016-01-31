@@ -1,5 +1,14 @@
 package com.example.jnlycklama.healthnow.fragments;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.hardware.Camera;
 import android.os.Bundle;
@@ -11,8 +20,12 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 
 import com.example.jnlycklama.healthnow.R;
@@ -28,7 +41,7 @@ public class VideoCallFragment extends Fragment {
     private boolean inPreview=false;
     private boolean cameraConfigured=false;
 
-    private TextView loading_screen;
+    private LinearLayout loading_screen;
 
     public VideoCallFragment() {
         // Required empty public constructor
@@ -49,7 +62,14 @@ public class VideoCallFragment extends Fragment {
         previewHolder.addCallback(surfaceCallback);
         previewHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 
-        loading_screen = (TextView) view.findViewById(R.id.loading_screen);
+        loading_screen = (LinearLayout) view.findViewById(R.id.loading_screen);
+
+        ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
+        int color = 0xFF222222;
+        progressBar.getIndeterminateDrawable().setColorFilter(color, PorterDuff.Mode.SRC_IN);
+        progressBar.getProgressDrawable().setColorFilter(color, PorterDuff.Mode.SRC_IN);
+
+        final ImageView videoView =(ImageView)view.findViewById(R.id.video_preview);
 
 //        VideoView videoView =(VideoView)view.findViewById(R.id.video_preview);
 //        MediaController mediaController= new MediaController(getActivity());
@@ -59,6 +79,31 @@ public class VideoCallFragment extends Fragment {
 //        videoView.setVideoURI(uri);
 //        videoView.requestFocus();
 //        videoView.start();
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        videoView.setAlpha(0f);
+                        videoView.setVisibility(View.VISIBLE);
+                        videoView.animate().alpha(1f).setDuration(1000).setListener(null);
+
+                        loading_screen.animate().alpha(0f).setDuration(1000)
+                                .setListener(new AnimatorListenerAdapter() {
+                                    @Override
+                                    public void onAnimationEnd(Animator animation) {
+                                        loading_screen.setVisibility(View.GONE);
+                                    }
+                                });
+
+                    }
+                });
+
+            }
+        }, 2500);
 
         return view;
     }

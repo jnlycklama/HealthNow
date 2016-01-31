@@ -2,22 +2,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jnlycklama.healthnow.fragments.VideoCallFragment">
+    tools:context="com.example.jnlycklama.healthnow.fragments.VideoCallFragment"
+    android:background="#cccccc">
 
-    <VideoView android:id="@+id/video_preview"
+    <!--<VideoView android:id="@+id/video_preview"-->
+        <!--android:visibility="invisible"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:layout_width="fill_parent"/>-->
+    <!-- -->
+    <ImageView
+        android:src="@drawable/two"
+        android:id="@+id/video_preview"
         android:visibility="invisible"
         android:layout_height="fill_parent"
-        android:layout_width="fill_parent"/>
-
-    <TextView
-        android:gravity="center"
-        android:id="@+id/loading_screen"
-        android:layout_height="fill_parent"
         android:layout_width="fill_parent"
-        android:background="#cccccc"
-        android:textColor="@color/text"
-        android:text="Connecting your call ...">
-    </TextView>
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:id="@+id/loading_screen"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="#222222"
+            android:textSize="18sp"
+            android:text="Connecting your call">
+        </TextView>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
 
     <Button
         android:layout_height="wrap_content"
@@ -47,5 +73,19 @@
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp">
     </SurfaceView>
+
+    <!--<ImageView-->
+        <!--android:id="@+id/image_view"-->
+        <!--android:layout_height="180dp"-->
+        <!--android:layout_width="130dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:layout_marginBottom="10dp"-->
+        <!--android:scaleType="centerCrop"-->
+        <!--android:src="@drawable/one">-->
+    <!--</ImageView>-->
+
 
 </RelativeLayout>

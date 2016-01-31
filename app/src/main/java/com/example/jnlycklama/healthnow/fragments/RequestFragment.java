@@ -51,7 +51,7 @@ public class RequestFragment extends Fragment {
 
         //ImageView image = (ImageView) findViewById(R.id.imageView4);
         Bitmap bitImg = BitmapFactory.decodeResource(getResources(),
-                R.drawable.nursesquare);
+                R.drawable.two);
         image.setImageBitmap(getRoundedCornerImage(bitImg));
 
         scr1 = (LinearLayout) v.findViewById(R.id.screen_1);
