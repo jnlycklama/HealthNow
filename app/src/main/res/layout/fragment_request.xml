@@ -67,7 +67,7 @@
             android:layout_height="170dp"
             android:id="@+id/imageView4"
             android:src="@drawable/nursesquare"
-            android:padding="10dp"/>
+            android:padding="10dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -81,9 +81,9 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="Start Call"
-            android:background="@color/colorPrimary"
             android:layout_margin="5dp"
-            android:textColor="@color/text"/>
+            android:textColor="@color/text"
+            android:background="@drawable/rounded_corners"/>
 
 
     </LinearLayout>

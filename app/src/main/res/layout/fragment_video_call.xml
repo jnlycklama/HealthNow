@@ -33,7 +33,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="8dp"
         android:text="End Call"
-        android:background="@color/colorAccentOne"/>
+        android:background="@drawable/rounded_corners"
+        android:textColor="@color/text"/>
 
 
     <SurfaceView

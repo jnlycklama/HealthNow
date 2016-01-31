@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:text="Submit Rating"
             android:textColor="@color/text"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/rounded_corners"
             android:padding="7dp"/>
 
     </LinearLayout>

@@ -3,6 +3,14 @@ package com.example.jnlycklama.healthnow.fragments;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -10,6 +18,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -31,11 +40,19 @@ public class RequestFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v =  inflater.inflate(R.layout.fragment_request, container, false);
+
+        ImageView image = (ImageView) v.findViewById(R.id.imageView4);
+
+        //ImageView image = (ImageView) findViewById(R.id.imageView4);
+        Bitmap bitImg = BitmapFactory.decodeResource(getResources(),
+                R.drawable.nursesquare);
+        image.setImageBitmap(getRoundedCornerImage(bitImg));
 
         scr1 = (LinearLayout) v.findViewById(R.id.screen_1);
         scr2 = (LinearLayout) v.findViewById(R.id.screen_2);
@@ -57,6 +74,7 @@ public class RequestFragment extends Fragment {
 
                 scr2.setAlpha(0f);
                 scr2.setVisibility(View.VISIBLE);
+
 
                 // Animate the content view to 100% opacity, and clear any animation
                 // listener set on the view.
@@ -82,6 +100,28 @@ public class RequestFragment extends Fragment {
         return v;
     }
 
+    public static Bitmap getRoundedCornerImage(Bitmap bitmap) {
+        Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),
+                bitmap.getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(output);
+
+        final int color = 0xff424242;
+        final Paint paint = new Paint();
+        final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+        final RectF rectF = new RectF(rect);
+        final float roundPx = 100;
+
+        paint.setAntiAlias(true);
+        canvas.drawARGB(0, 0, 0, 0);
+        paint.setColor(color);
+        canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
+
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+        canvas.drawBitmap(bitmap, rect, rect, paint);
+
+        return output;
+
+    }
 
 
 
